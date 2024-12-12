@@ -1,4 +1,21 @@
-import { ChevronDown, ChevronUp, Home, Users, Calendar, Settings, Search, Book, BarChart, DollarSign, FileText, HelpCircle, GraduationCap, ClipboardCheck, Guitar, BookOpenCheck } from "lucide-react";
+import { 
+    ChevronDown, 
+    Home, 
+    Users, 
+    Calendar, 
+    Search, 
+    Book, 
+    BarChart, 
+    DollarSign, 
+    FileText, 
+    HelpCircle, 
+    GraduationCap, 
+    ClipboardCheck, 
+    Guitar, 
+    BookOpenCheck 
+} from "lucide-react";
+
+
 import {
     Sidebar,
     SidebarContent,
@@ -10,16 +27,16 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-    SidebarMenuSub,
-    SidebarMenuSubItem,
-    SidebarProvider,
     SidebarSeparator,
 } from "@/components/ui/sidebar";
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@radix-ui/react-collapsible";
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@radix-ui/react-separator";
-import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 
+import { 
+    Collapsible, 
+    CollapsibleTrigger, 
+    CollapsibleContent 
+} from "@radix-ui/react-collapsible";
+
+import { Badge } from "@/components/ui/badge"
 
 
 export function AppSidebar() {
