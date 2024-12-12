@@ -40,9 +40,9 @@ import {
 import { Badge } from "@/components/ui/badge"
 
 
-export default function AppSidebar() {
+export default function AppSidebar({ isOpen }: { isOpen: boolean }) {
     return (
-        <SidebarProvider>
+        <SidebarProvider open={isOpen}>
             <Sidebar collapsible="icon">
                 <SidebarHeader className="relative">
                     <div className="flex flex-col items-center p-4">
@@ -54,11 +54,13 @@ export default function AppSidebar() {
                             />
                         </div>
 
-                        <div className="text-center">
-                            <h4 className="text-md font-medium">Poorvi Yeluri</h4>
-                            <p className="text-sm text-muted-foreground">Admin</p>
-                            <p className="text-sm text-muted-foreground">Location: Corporate</p>
-                        </div>
+                        {isOpen && (
+                            <div className="text-center">
+                                <h4 className="text-md font-medium">Poorvi Yeluri</h4>
+                                <p className="text-sm text-muted-foreground">Admin</p>
+                                <p className="text-sm text-muted-foreground">Location: Corporate</p>
+                            </div>
+                        )}
                     </div>
                 </SidebarHeader>
 
