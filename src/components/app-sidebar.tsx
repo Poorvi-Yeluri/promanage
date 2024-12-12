@@ -1,18 +1,18 @@
-import { 
-    ChevronDown, 
-    Home, 
-    Users, 
-    Calendar, 
-    Search, 
-    Book, 
-    BarChart, 
-    DollarSign, 
-    FileText, 
-    HelpCircle, 
-    GraduationCap, 
-    ClipboardCheck, 
-    Guitar, 
-    BookOpenCheck 
+import {
+    ChevronDown,
+    Home,
+    Users,
+    Calendar,
+    Search,
+    Book,
+    BarChart,
+    DollarSign,
+    FileText,
+    HelpCircle,
+    GraduationCap,
+    ClipboardCheck,
+    Guitar,
+    BookOpenCheck
 } from "lucide-react";
 
 
@@ -27,77 +27,80 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
+    SidebarProvider,
     SidebarSeparator,
 } from "@/components/ui/sidebar";
 
-import { 
-    Collapsible, 
-    CollapsibleTrigger, 
-    CollapsibleContent 
+import {
+    Collapsible,
+    CollapsibleTrigger,
+    CollapsibleContent
 } from "@radix-ui/react-collapsible";
 
 import { Badge } from "@/components/ui/badge"
 
 
-export function AppSidebar() {
+export default function AppSidebar() {
     return (
-        <Sidebar collapsible="icon">
-            <SidebarHeader className="relative">
-                <div className="flex flex-col items-center p-4">
-                    <div className="mb-4">
-                        <img
-                            src="https://muzigal.com/images/logo.svg"
-                            alt="Muzigal Logo"
-                            className="h-8"
-                        />
+        <SidebarProvider>
+            <Sidebar collapsible="icon">
+                <SidebarHeader className="relative">
+                    <div className="flex flex-col items-center p-4">
+                        <div className="mb-4">
+                            <img
+                                src="https://muzigal.com/images/logo.svg"
+                                alt="Muzigal Logo"
+                                className="h-8"
+                            />
+                        </div>
+
+                        <div className="text-center">
+                            <h4 className="text-md font-medium">Poorvi Yeluri</h4>
+                            <p className="text-sm text-muted-foreground">Admin</p>
+                            <p className="text-sm text-muted-foreground">Location: Corporate</p>
+                        </div>
                     </div>
+                </SidebarHeader>
 
-                    <div className="text-center">
-                        <h4 className="text-md font-medium">Poorvi Yeluri</h4>
-                        <p className="text-sm text-muted-foreground">Admin</p>
-                        <p className="text-sm text-muted-foreground">Location: Corporate</p>
-                    </div>
-                </div>
-            </SidebarHeader>
+                <SidebarSeparator className="mb-3" />
 
-            <SidebarSeparator className="mb-3" />
+                <SidebarContent>
+                    {menuItems.map((item) => (
+                        <Collapsible defaultOpen className="group/collapsible">
+                            <SidebarGroup key={item.title}>
+                                <SidebarGroupLabel asChild>
+                                    <CollapsibleTrigger>
+                                        {item.title}
+                                        <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                                    </CollapsibleTrigger>
+                                </SidebarGroupLabel>
+                                <CollapsibleContent>
+                                    <SidebarGroupContent>
+                                        <SidebarMenu>
+                                            {item.subItems &&
+                                                item.subItems.map((subItem) => (
+                                                    <SidebarMenuItem key={subItem.title}>
+                                                        <SidebarMenuButton asChild>
+                                                            <a href={subItem.url} className="flex items-center space-x-1">
+                                                                <subItem.icon className="w-4 h-4" />
+                                                                <span>{subItem.title}</span>
+                                                                {subItem.badge && (<Badge> {subItem.badge} </Badge>)}
+                                                            </a>
+                                                        </SidebarMenuButton>
+                                                    </SidebarMenuItem>
+                                                ))}
+                                        </SidebarMenu>
+                                    </SidebarGroupContent>
+                                </CollapsibleContent>
+                            </SidebarGroup>
+                        </Collapsible>
+                    ))}
+                </SidebarContent>
+                <SidebarFooter>
 
-            <SidebarContent>
-                {menuItems.map((item) => (
-                    <Collapsible defaultOpen className="group/collapsible">
-                        <SidebarGroup key={item.title}>
-                            <SidebarGroupLabel asChild>
-                                <CollapsibleTrigger>
-                                    {item.title}
-                                    <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
-                                </CollapsibleTrigger>
-                            </SidebarGroupLabel>
-                            <CollapsibleContent>
-                                <SidebarGroupContent>
-                                    <SidebarMenu>
-                                        {item.subItems &&
-                                            item.subItems.map((subItem) => (
-                                                <SidebarMenuItem key={subItem.title}>
-                                                    <SidebarMenuButton asChild>
-                                                        <a href={subItem.url} className="flex items-center space-x-1">
-                                                            <subItem.icon className="w-4 h-4" />
-                                                            <span>{subItem.title}</span>
-                                                            {subItem.badge && (<Badge> {subItem.badge} </Badge>)}
-                                                        </a>
-                                                    </SidebarMenuButton>
-                                                </SidebarMenuItem>
-                                            ))}
-                                    </SidebarMenu>
-                                </SidebarGroupContent>
-                            </CollapsibleContent>
-                        </SidebarGroup>
-                    </Collapsible>
-                ))}
-            </SidebarContent>
-            <SidebarFooter>
-
-            </SidebarFooter>
-        </Sidebar>
+                </SidebarFooter>
+            </Sidebar>
+        </SidebarProvider>
     );
 }
 
