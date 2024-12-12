@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
         setIsSidebarOpen((prev) => !prev);
     };
     return (
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <SidebarProvider>
                 <div className="flex min-h-screen">
                     {/* Sidebar Component */}
