@@ -132,90 +132,7 @@ const menuItems = [
                 url: "#",
                 badge: null,
             },
-            {
-                title: "Hire a Teacher",
-                icon: Users,
-                url: "#",
-                badge: null,
-            },
-        ]
-    },
-    {
-        title: "Admissions",
-        icon: GraduationCap,
-        url: "#",
-        badge: null,
-        subItems: [
-            {
-                title: "Students",
-                icon: Users,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Enrollments",
-                icon: Calendar,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Courses",
-                icon: Book,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Curriculum",
-                icon: FileText,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Attendance",
-                icon: Calendar,
-                url: "#",
-                badge: null,
-            },
-        ]
-    },
-    {
-        title: "Assessments",
-        icon: ClipboardCheck,
-        url: "#",
-        badge: null,
-        subItems: [
-            {
-                title: "Muzigal",
-                icon: BookOpenCheck,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "RSL",
-                icon: BookOpenCheck,
-                url: "#",
-                badge: null,
-            },
-        ]
-    },
-    {
-        title: "Retail",
-        icon: Guitar,
-        url: "#",
-        badge: null,
-        subItems: [
-            {
-                title: "Instruments",
-                icon: Guitar,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Books",
-                icon: Book,
-                url: "#",
-                badge: null,
-            },
+         
         ]
     },
     {
@@ -250,38 +167,7 @@ const menuItems = [
                 url: "#",
                 badge: null,
             },
-            {
-                title: "Sales Champ",
-                icon: BarChart,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Trade Champ",
-                icon: BarChart,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Thunderbolt Champ",
-                icon: BarChart,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "Certification Champ",
-                icon: BarChart,
-                url: "#",
-                badge: null,
-            },
-            {
-                title: "OE Champ",
-                icon: BarChart,
-                url: "#",
-                badge: null,
-            },
-        ]
-    },
+
     {
         title: "Help",
         icon: HelpCircle,
